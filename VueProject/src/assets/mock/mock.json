@@ -1,0 +1,129 @@
+{
+  "data": [
+    {
+      "case": 1,
+      "triType": [
+        -10,
+        "-10b",
+        "+10c"
+      ],
+      "input":{
+        "i": 181 ,
+        "j": 452 ,
+        "k": -396
+      },
+      "output":
+        {
+          "Concrete": 3,
+          "symbolic": 3
+        },
+      "pathPredicate": [
+        "i>0",
+        "j>=0",
+        "k<0"
+      ]
+    },
+    {
+      "case": 2,
+      "triType": [
+        -10,
+        "-10b",
+        "+10c",
+        "+11"
+      ],
+      "input": {
+        "i": 181 ,
+        "j": 452 ,
+        "k": 899
+      },
+      "output":
+        {
+          "Concrete": 3,
+          "symbolic": 3
+        },
+      "pathPredicate": [
+        "i>0",
+        "j>=0",
+        "k<0"
+      ]
+    },
+    {
+      "case": 3,
+      "triType": [
+        -10,
+        "-10b",
+        "+10c",
+        "+12"
+      ],
+      "input": {
+        "i": 94 ,
+        "j": 189 ,
+        "k": 177
+      },
+      "output":
+        {
+          "Concrete": 3,
+          "symbolic": 3
+        },
+      "pathPredicate": [
+        "i>0",
+        "j>=0",
+        "k<0",
+        "(j+i)=<k"
+      ]
+    },
+    {
+      "case": 4,
+      "triType": [
+        -10,
+        "-10b",
+        "+10c",
+        "+12",
+        "+13"
+      ],
+      "input": {
+        "i": 193 ,
+        "j": 378 ,
+        "k": 378
+      },
+      "output":
+        {
+          "Concrete": 3,
+          "symbolic": 3
+        },
+      "pathPredicate": [
+        "i>0",
+        "j>=0",
+        "k<0"
+      ]
+    },
+    {
+      "case": 5,
+      "triType": [
+        -10,
+        "-10b",
+        "+10c",
+        "+12",
+        "+12b",
+        "+14"
+      ],
+      "input": {
+        "i": 599 ,
+        "j": 846.99999999999989 ,
+        "k": 599
+      },
+      "output":
+        {
+          "Concrete": 3,
+          "symbolic": 3
+        },
+      "pathPredicate": [
+        "i>0",
+        "j>=0",
+        "k<0",
+        "(j+i)=<k",
+        "(k+j)=<i"
+      ]
+    }
+  ]
+}

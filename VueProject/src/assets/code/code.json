@@ -1,0 +1,24 @@
+{
+  "codes": [
+    {
+      "title": "Example1",
+      "content":"/* Should copy all the elements\n   of ordered arrays t1 and t2\n   of lengths l1 and l2\n   into the ordered array t3 */\nvoid Merge (int t1[], int t2[], int t3[], int l1, int l2) {\n\n  int i = 0, j = 0, k = 0 ;\n\n  while (i < l1 && j < l2) { // line 09\n    if (t1[i] < t2[j]) {     // line 10\n      t3[k] = t1[i];\n      i++;\n      }\n    else {\n      t3[k] = t2[j];\n      j++;\n      }\n    k++;\n    }\n  while (i < l1) {           // line 20\n    t3[k] = t1[i];\n    i++;\n\n    }\n  while (j < l2) {           // line 25\n    t3[k] = t2[j];\n    j++;\n    k++;\n    }\n}"
+    },
+    {
+      "title": "Example2",
+      "content": "/* Should return the type of the triangle\n   which has sides of these lengths.\n\n   2 = equilateral triangle\n   1 = isoceles triangle\n   0 = other triangle\n*/\nint Tritype(double i, double j, double k){\n  int trityp = 0;\n//  if (i < 0.0 || j < 0.0 || k < 0.0)        // line 10  \n//    return 3;\n//  if (i + j <= k || j + k <= i || k + i <= j)//line 12 \n//    return 3; \n  if (i == j) trityp = trityp + 1;            // line 14\n  if (i == k) trityp = trityp + 1;            // line 15\n  if (j == k) trityp = trityp + 1;            // line 16\n  if (trityp >= 2)                            // line 17\n      trityp = 2;\n  return trityp;\n}"
+    },
+    {
+      "title": "Example3",
+      "content": "/* Should return the type of the triangle\n   which has sides of these lengths.\n\n   2 = equilateral triangle\n   1 = isoceles triangle\n   0 = other triangle\n*/\nint Tritype(double i, double j, double k){\n  int trityp = 0;\n//  if (i < 0.0 || j < 0.0 || k < 0.0)        // line 10  \n//    return 3;\n//  if (i + j <= k || j + k <= i || k + i <= j)//line 12 \n//    return 3; \n  if (i == j) trityp = trityp + 1;            // line 14\n  if (i == k) trityp = trityp + 1;            // line 15\n  if (j == k) trityp = trityp + 1;            // line 16\n  if (trityp >= 2)                            // line 17\n      trityp = 2;\n  return trityp;\n}"
+    },
+    {
+      "title": "Example4",
+      "content": "/* Should return the type of the triangle\n   which has sides of these lengths.\n\n   2 = equilateral triangle\n   1 = isoceles triangle\n   0 = other triangle\n*/\nint Tritype(double i, double j, double k){\n  int trityp = 0;\n//  if (i < 0.0 || j < 0.0 || k < 0.0)        // line 10  \n//    return 3;\n//  if (i + j <= k || j + k <= i || k + i <= j)//line 12 \n//    return 3; \n  if (i == j) trityp = trityp + 1;            // line 14\n  if (i == k) trityp = trityp + 1;            // line 15\n  if (j == k) trityp = trityp + 1;            // line 16\n  if (trityp >= 2)                            // line 17\n      trityp = 2;\n  return trityp;\n}\n\nint Tritype_precond(double i, double j, double k){\n  if (i < 0.0 || j < 0.0 || k < 0.0)          // line 23\n    return 0;\n  if (i + j <= k || j + k <= i || k + i <= j) // line 25\n    return 0;\n  return 1;    \n}\n"
+    },
+    {
+      "title": "Example5",
+      "content": "/* Should copy all the elements\n   of ordered arrays t1 and t2\n   into the ordered array t3 */\n\nvoid Merge(int t1[3], int t2[3], int t3[6]) {\n\n  int i = 0, j = 0, k = 0 ;\n\n  while (i < 3 && j < 3) { // line 09\n    if (t1[i] < t2[j]) {   // line 10\n      t3[k] = t1[i];\n      i++;\n    }\n    else {\n      t3[k] = t2[j];\n      j++;\n    }\n    k++ ;\n  }\n  while (i < 3) {          // line 20\n    t3[k] = t1[i];\n    i++;\n    k++;\n  }\n  while (j < 3) {          // line 25\n    t3[k] = t2[j];\n    j++;\n    k++;\n  }\n}\n"
+    }
+  ]
+}
