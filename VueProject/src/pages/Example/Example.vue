@@ -34,9 +34,25 @@
                     header-tag="header"
             >
                 <b-card-text>
-                    <div v-for="i in 3" >
-                        <input type="text"  name="userName" placeholder="請輸入姓名"/>
-                    </div>
+                    <tr v-for="(input,keys) in (mock[1].input)" :key="input">
+                        <td> <b-input
+                                id="inline-form-input-name"
+                                class="mb-2 mr-sm-2 mb-sm-0"
+                                placeholder="-1.7976931348623157e+308"
+                        ></b-input></td>
+                        <td><=</td>
+                        <td> <b-input
+                                id="inline-form-input-name"
+                                class="mb-2 mr-sm-2 mb-sm-0"
+                                v-model="keys"
+                        ></b-input></td>
+                        <td><=</td>
+                        <td> <b-input
+                                id="inline-form-input-name"
+                                class="mb-2 mr-sm-2 mb-sm-0"
+                                placeholder="1.7976931348623157e+308"
+                        ></b-input></td>
+                    </tr>
                 </b-card-text>
                 <b-button href="#" variant="primary">Go somewhere</b-button>
             </b-card>
@@ -60,6 +76,7 @@
 </template>
 <script>
     import Code from "@/components/Code/Code";
+    import axios from "axios";
 
     export default {
         name: "Example",
@@ -67,7 +84,8 @@
         data() {
             return {
                 ind: 'Example1',
-                componentKey: 0
+                mock: [],
+                componentKey: 0,
             }
         },
         watch: {
@@ -89,7 +107,11 @@
                 this.componentKey += 1;
             }
         },
-
+        mounted() {
+            axios.get("/api/index").then(res => {
+                this.mock = res.data.data
+            })
+        }
     }
 </script>
 
