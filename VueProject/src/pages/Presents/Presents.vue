@@ -28,7 +28,7 @@
                                             </h6>
                                         </b-col>
                                         <div style="margin:0px;padding:0px">
-                                            <Code :ind="name" :highlight="mock[ind-1].triType"
+                                            <Code @load="forceRerender" :ind="name" :highlight="mock[ind-1].triType"
                                                   :key="componentKey"></Code>
                                         </div>
                                     </b-row>
@@ -70,14 +70,12 @@
                 </div>
             </b-col>
         </b-row>
-
     </div>
 </template>
 
 <script>
     import axios from "axios";
     import Code from "@/components/Code/Code";
-
     export default {
         name: "Presents",
 
@@ -85,14 +83,16 @@
         data() {
             return {
                 componentKey: 0,
-                ind: 1,
                 mock: [],
                 name: '',
+                ind:1,
             }
         },
+
         watch: {
             ind: {
                 handler: function () {
+                    console.log(this.ind)
                     this.forceRerender()
                 }
             }
@@ -106,12 +106,13 @@
             }
         },
         mounted() {
+
             this.name = this.$route.query.ID
             axios.get("/api/index").then(res => {
                 this.mock = res.data.data
             })
-            if (location.href.indexOf('#reloaded') == -1) {
-                location.href = location.href + "#reloaded";
+            if(location.href.indexOf('#r')==-1){
+                location.href=location.href+"#r";
                 location.reload();
             }
         }

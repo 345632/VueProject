@@ -72,6 +72,7 @@
             </b-card>
 
         </b-collapse>
+        <tt></tt>
     </div>
 </template>
 <script>
@@ -80,7 +81,9 @@
 
     export default {
         name: "Example",
-        components: {Code},
+        components: {'Code':Code,
+        'tt':bid
+        },
         data() {
             return {
                 ind: 'Example1',
