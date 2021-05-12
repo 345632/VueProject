@@ -16,7 +16,7 @@
     "bootstrap": "^4.1.1",
     "bootstrap-vue": "2.0.3",
     "code-line": "^1.1.2",
-    "codemirror": "^5.54.0",
+    "codemirror": "^5.58.2",
     "css-loader": "^1.0.0",
     "echarts": "^4.3.0",
     "expose-loader": "^0.7.5",
